@@ -13,59 +13,133 @@
 	<header>
 		<div class="navContainer"></div>
 
-		<div class="logo">
-			<img src="../assets/img/plantDoctor.png" class="logo" alt="">
-			<a href="index.html">
-				<h1>Plant Doctor</h1>
-			</a>
-		</div>
+
 
 		<nav>
-			<ul>
-				<div>
-					<li><a href="index.html">The Sac</a></li>
+			<div class="logo">
+				<img src="../assets/img/eco.svg" class="logo" alt="">
+				<a href="index.html" class="logoLink">
+					Plant-Doctor
+				</a>
+			</div>
+			<div class="navContainer">
+				<div class="navItem">
+					<img src="../assets/img/potted_plant.svg" class="logo" alt="">
+					<a href="index.html">The Sac</a>
 				</div>
-				<div>
-					<li><a href="Nils.html">Nils</a></li>
+				<div class="navItem">
+					<img src="../assets/img/potted_plant.svg" class="logo" alt="">
+					<a href="index.html">The Sac</a>
 				</div>
-				<div>
-					<li><a href="Adam.html">Adam</a></li>
+				<div class="navItem">
+					<img src="../assets/img/potted_plant.svg" class="logo" alt="">
+					<a href="index.html">The Sac</a>
 				</div>
-				<div>
-					<li><a href="Sebbe.html">Sebbe</a></li>
+				<div class="navItem">
+					<img src="../assets/img/potted_plant.svg" class="logo" alt="">
+					<a href="index.html">The Sac</a>
 				</div>
-			</ul>
+			</div>
+
+
+
 		</nav>
 		</div>
 
 	</header>
+	<main>
+		<section class="overviewContainer">
+			<div id="dataOverviewContainer">
+				<div class="plantOverview">
+					<h2>Monstera Deliciosa</h2>
+					<div class="overViewContent">
+						<p>Overall mood:</p>
+						<div class="iconWithText">
+							<p>Happy</p>
+							<img src="../assets/img/mood.svg" alt="">
+						</div>
+					</div>
+					<div class="overViewContent">
+						<p>Automated watering:</p>
+						<p>Yes(button)</p>
+					</div>
+				</div>
 
-	<section class="Overview">
-		<div id="dataOverviewContainer">
-			<div class="plantOverview">
-				<h2>Monstera Deliciosa</h2>
-				<p>Overall mood: Happy</p>
-				<p>Automated watering: Yes(button)</p>
-			</div>
+				<div class="plantDetails">
+					<div class="plantDetailsContainer">
+						<div class="plantDetailsItem">
+							<div class="iconWithText">
+								<h2>Plant Details</h2>
+							</div>
+							<div>
+								<p>KNAPP</p>
+							</div>
+						</div>
+						<div class="plantDetailsContainer">
+							<div class="plantDetailsItem">
+								<div class="iconWithText">
+									<img src="../assets/img/thermostat.svg" alt="">
+									<p>Temperature:</p>
+								</div>
+								<div>
+									<p>35°C</p>
+								</div>
+							</div>
 
-			<div class="plantDetails">
-				<h2>Plant Details</h2>
-				<p>Temperature: 35</p>
-				<p>Light level: High</p>
-				<p>Water level: Low</p>
-				<p>Soil moisture: 40%</p>
-				<p>Humidity: 60%</p>
+							<div class="plantDetailsItem">
+								<div class="iconWithText">
+									<img src="../assets/img/sunny.svg" alt="">
+									<p>Light level:</p>
+								</div>
+								<div>
+									<p>HIGH</p>
+								</div>
+							</div>
 
-			</div>
-
-			<div class="plant">
-				<img src="../assets/img/monstera.png" class="plant-image" alt="">
-			</div>
-		</div>
-	</section>
-
+							<div class="plantDetailsItem">
+								<div class="iconWithText">
+									<img src="../assets/img/water.svg" alt="">
+									<p>Water level:</p>
+								</div>
+								<div>
+									<p>HIGH</p>
+								</div>
+							</div>
+							<hr>
+							<div class="progressItem">
+							<div class="plantDetailsItem">
+								<div class="iconWithText">
+									<img src="../assets/img/sprinkler.svg" alt="">
+									<p>Soil moisture:</p>
+								</div>
+								<div>
+									<p>40%</p>
+								</div>
+							</div>
+							<progress id="prog" value="40" max="100"></progress>
+							</div>
+							<div class="progressItem"> 
+							<div class="plantDetailsItem">
+								<div class="iconWithText">
+									<img src="../assets/img/humidity_mid.svg" alt="">
+									<p>Humidity:</p>
+								</div>
+								<div>
+									<p>60%</p>
+								</div>
+							</div>
+							<progress id="prog" value="60" max="100"></progress>
+						</div>
+						</div>
+					</div>
+		</section>
+		<section class="plant">
+			<img src="../assets/img/monstera.png"
+				class="plant-image" alt="">
+		</section>
+	</main>
 	<footer>
-		<p>&copy; 2024 Plant Doctor. All rights reserved.</p>
+		<p>&copy; 2026 Plant Doctor. All rights reserved.</p>
 	</footer>
 </body>
 
