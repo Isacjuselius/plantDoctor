@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../assets/css/style.css">
-
+	<link rel="stylesheet" href="../assets/css/fonts.css">
 	<title>Plant Doctor</title>
 </head>
 
@@ -107,35 +107,34 @@
 							</div>
 							<hr>
 							<div class="progressItem">
-							<div class="plantDetailsItem">
-								<div class="iconWithText">
-									<img src="../assets/img/sprinkler.svg" alt="">
-									<p>Soil moisture:</p>
+								<div class="plantDetailsItem">
+									<div class="iconWithText">
+										<img src="../assets/img/sprinkler.svg" alt="">
+										<p>Soil moisture:</p>
+									</div>
+									<div>
+										<p>40%</p>
+									</div>
 								</div>
-								<div>
-									<p>40%</p>
-								</div>
+								<progress id="prog" value="40" max="100"></progress>
 							</div>
-							<progress id="prog" value="40" max="100"></progress>
-							</div>
-							<div class="progressItem"> 
-							<div class="plantDetailsItem">
-								<div class="iconWithText">
-									<img src="../assets/img/humidity_mid.svg" alt="">
-									<p>Humidity:</p>
+							<div class="progressItem">
+								<div class="plantDetailsItem">
+									<div class="iconWithText">
+										<img src="../assets/img/humidity_mid.svg" alt="">
+										<p>Humidity:</p>
+									</div>
+									<div>
+										<p>60%</p>
+									</div>
 								</div>
-								<div>
-									<p>60%</p>
-								</div>
+								<progress id="prog" value="60" max="100"></progress>
 							</div>
-							<progress id="prog" value="60" max="100"></progress>
-						</div>
 						</div>
 					</div>
 		</section>
 		<section class="plant">
-			<img src="../assets/img/monstera.png"
-				class="plant-image" alt="">
+			<img src="../assets/img/plant.png" class="plant-image" alt="">
 		</section>
 	</main>
 	<footer>
