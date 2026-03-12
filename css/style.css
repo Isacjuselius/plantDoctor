@@ -199,11 +199,10 @@ progress::-webkit-progress-value {
 }
 
 .plant-image {
-	position: absolute;
-	border: 1px solid black;
-		object-fit: cover;
-	width: 600px;
+	object-fit: cover;
+	width: 90%;
 	height: auto;
+	display: block;
 }
 
 .plantStatusBlob {
@@ -215,40 +214,40 @@ progress::-webkit-progress-value {
 }
 
 .plantTemperature {
-	top: 100px;
-	right: 430px;
+	top: 12%;
+	right: 40%;
 }
 
 .plantTemperature img{
 	transform: scaleX(-1);
-	left: 100px;
-	top: 20px;
+	left: 110%;
+	top: 25%;
 }
 
 .plantSunlight {
-	top: 200px;
-	right: 590px;
+	top: 30%;
+	right: 65%;
 }
 
 .plantSunlight img{
 	transform: scaleX(-1);
-	left: 70px;
-	top: 20px;
+	left: 110%;
+	top: 30%;
 }
 
 .plantSoilMoisture {
-	top: 550px;
-	right: 100px;
+	top: 70%;
+	right: 10%;
 }
 
 .plantSoilMoisture img{
-	right: 100px;
-	top: 20px;
+	right: 100%;
+	top: 20%;
 }
 
 .plantHumidity {
-	top: 420px;
-	right: 120px;
+	top: 30%;
+	right: 5%;
 }
 
 
