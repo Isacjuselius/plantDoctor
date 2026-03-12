@@ -47,18 +47,113 @@
 	</header>
 
 	<div class="topContainer">
-		<div>
+		<div class="tempContainer">
+			<div class="tempHeader">
+				<h3>Temperature</h3>
+				<p>24°C</p>
+			</div>
+			<div>
 				<canvas id="tempChart" style="
-    width: 100% !important;
-    height: 100% !important;
-  "></canvas>
+    			width: 100% !important;
+    			height: 100% !important;"></canvas>
+			</div>
+		</div>
+		<div class="moodContainer">
+			<div class="moodHeader">
+				<h3>Overall mood</h3>
+			</div>
+			<div class="moodContent">
+				<div class="moodPic">
+					<img src="../assets/img/mood.svg" alt="">
+				</div>
+				<div class="moodDescriptionContainer">
+					<h2>HELLO</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.</p>
+					<ul>
+						<li>Temperature: 24°C</li>
+						<li>Humidity: 60%</li>
+						<li>Light: 300 lux</li>
+						<li>Soil Moisture: 40%</li>
+					</ul>
+				</div>
+
+			</div>
 		</div>
 	</div>
+	<div class="bottomContainer">
+		<div class="bottomLeftContainer">
+			<div class="smallContainer">
+				<div class="smallContainerHeader">
+					<div>
+						<img src="../assets/img/sunny.svg" alt="">
+					</div>
+					<div>
+						<h3>Light level</h3>
+					</div>
+				</div>
+				<div class="smallContainerContent">
+					<div class="smallContainerInfo">
+						<div class="InfoPic">
+							<img src="../assets/img/neutral.svg" alt="">
+						</div>
+						<div class="smallContainerDescription">
+							<h2>Dark</h2>
+							<p>4000 lumen</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="smallContainer">
+				<div class="smallContainerHeader">
+					<div>
+						<img src="../assets/img/water.svg" alt="">
+					</div>
+					<div>
+						<h3>Water level</h3>
+					</div>
+				</div>
+				<div class="smallContainerContent">
+					<div class="smallContainerInfo">
+						<div class="InfoPic">
+							<img src="../assets/img/neutral.svg" alt="">
+						</div>
+						<div class="smallContainerDescription">
+							<h2>Normal</h2>
+							<p>Water tank is full</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sliderContainer">
+				<div class="sliderContainerHeader">
+					<div>
+						<img src="../assets/img/neutral.svg" alt="">
+					</div>
+					<div>
+						<h3>Light configuration</h3>
+					</div>
+				</div>
+				<div class="slidecontainer">
+					<div>
+						<input type="range" min="1" max="4" value="4" class="slider" id="myRange">
+					</div>
+					<div class="sliderStepsContainer">
+						<span>Low</span>
+						<span>Normal</span>
+						<span>High</span>
+						<span>Max</span>
+					</div>
+				</div>
+				<div class="sliderDescription">
+					<p>The general light level in the room. Darker room needs higher setting.</p>
+				</div>
 
+			</div>
+		</div>
 
+	</div>
 
 	<script src="../js/scriptOverview.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0"></script>
 
 
 
