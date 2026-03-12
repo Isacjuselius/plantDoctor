@@ -200,9 +200,19 @@ progress::-webkit-progress-value {
 	display: flex;
 	flex-direction: column;
 	padding-left: 300px;
+	position: relative;
 }
 
 .plant-image {
-	position: relative;
+	position: absolute;
 	border: 1px solid black;
+}
+
+.plantTemperature {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	position: absolute;
+	top: 200px;
+	right: 200px;
 }

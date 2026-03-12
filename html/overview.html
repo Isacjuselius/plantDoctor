@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../css/styleOverview.css">
 	<link rel="stylesheet" href="../css/fonts.css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<title>Plant Doctor</title>
 </head>
 
@@ -47,9 +48,14 @@
 
 	<div class="topContainer">
 		<div>
-			<canvas id="tempChart"></canvas>
+				<canvas id="tempChart" style="
+    width: 100% !important;
+    height: 100% !important;
+  "></canvas>
 		</div>
 	</div>
+
+
 
 	<script src="../js/scriptOverview.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0"></script>
