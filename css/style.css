@@ -237,7 +237,7 @@ progress::-webkit-progress-value {
 
 .plantSoilMoisture {
 	top: 70%;
-	right: 10%;
+	right: 15%;
 }
 
 .plantSoilMoisture img{
@@ -252,8 +252,8 @@ progress::-webkit-progress-value {
 
 
 .plantHumidity img {
-	right: 70px;
-	top: 20px;
+	right: 110%;
+	top: 30%;
 }
 
 .statusPointer{
