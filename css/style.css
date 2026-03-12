@@ -1,0 +1,203 @@
+
+:root {
+	--light-green: #C8E2D8;
+	--dark-green: #7F8F89;
+	--gray: #8A8A8A;
+}
+
+body {
+    background: linear-gradient(
+        to top,
+        #e5f7ed 0%,
+        #ffffff 100%
+    );
+}
+
+.plantStatusLabel {
+	font-weight: 500;
+	color: var(--gray);
+}
+
+.plantStatusValue {
+	font-size: 18px;
+	font-weight: 700;
+	color: var(--dark-green);
+}
+
+hr {
+	border: none;
+	border-top: 1px solid #FFFFFF;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Inter_self", sans-serif, "Trebuchet MS", Helvetica, Arial, sans-serif;
+}
+
+nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	padding: 0 20px;
+	height: 70px;
+	background-size: cover;
+	position: fixed;
+	width: 100%;
+}
+
+nav a {
+	color: #333;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.navItem {
+	display: flex;
+	align-items: center;
+	width: 100px;
+	border-radius: 15px;
+	justify-content: space-between;
+	padding: 5px;
+}
+
+.navItem img {
+	width: 24px;
+	height: auto;
+}
+
+.logo {
+	height: auto;
+	display: flex;
+	width: 200px;
+	align-items: center;
+	width: 50%;
+}
+
+.logo img {
+	width: 24px;
+	height: auto;
+}
+
+.logo a {
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+.navContainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 50%;
+}
+
+main {
+	grid-template-columns: 1fr 2fr;
+	display: grid;
+	height: 100vh;
+}
+
+.overviewContainer {
+	grid-column: span(1);
+}
+
+.plantOverview {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	padding: 20px;
+	background-color: var(--light-green);
+	border-radius: 15px;
+	gap: 15px;
+}
+
+.plantDetails {
+	display: flex;
+	color: white;
+	flex-direction: column;
+	justify-content: space-around;
+	padding: 20px;
+	border-radius: 15px;
+	gap: 15px;
+	margin-top: 25px;
+	background-color: var(--dark-green);
+}
+
+.plantDetailsItem {
+	display: flex;
+	justify-content: space-between;
+}
+
+.plantDetailsContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 28px;
+}
+
+.overviewContainer {
+	display: flex;
+	flex-direction: column;
+	padding: 100px 20px;
+}
+
+.overViewContent {
+	display: flex;
+	justify-content: space-between;
+}
+
+.iconWithText {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.plant {
+	grid-column: span(1);
+}
+
+.plant img {
+	object-fit: cover;
+	width: 600px;
+	height: auto;
+}
+
+
+.progressItem {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+progress {
+	width: 100%;
+	height: 20px;
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+	background-color: #ffffff3f;
+	border-radius: 15px;
+}
+
+progress::-webkit-progress-value {
+	background-color: var(--light-green);
+	border-radius: 15px;
+}
+
+.plant {
+	display: flex;
+	flex-direction: column;
+	padding-left: 300px;
+}
+
+.plant-image {
+	top: 100px;
+	position: relative;
+	border: 1px solid black;
+}

@@ -4,17 +4,14 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../assets/css/style.css">
-	<link rel="stylesheet" href="../assets/css/fonts.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/fonts.css">
 	<title>Plant Doctor</title>
 </head>
 
 <body>
 	<header>
 		<div class="navContainer"></div>
-
-
-
 		<nav>
 			<div class="logo">
 				<img src="../assets/img/eco.svg" class="logo" alt="">
@@ -72,7 +69,7 @@
 								<h2>Plant Details</h2>
 							</div>
 							<div>
-								<p>KNAPP</p>
+								<p>SEE MORE</p>
 							</div>
 						</div>
 						<div class="plantDetailsContainer">
@@ -82,7 +79,7 @@
 									<p>Temperature:</p>
 								</div>
 								<div>
-									<p>35°C</p>
+									<p id="temperatureValue">35°C</p>
 								</div>
 							</div>
 
@@ -92,7 +89,7 @@
 									<p>Light level:</p>
 								</div>
 								<div>
-									<p>HIGH</p>
+									<p id="lightLevelValue">HIGH</p>
 								</div>
 							</div>
 
@@ -102,7 +99,7 @@
 									<p>Water level:</p>
 								</div>
 								<div>
-									<p>HIGH</p>
+									<p id="waterLevelValue">HIGH</p>
 								</div>
 							</div>
 							<hr>
@@ -113,10 +110,10 @@
 										<p>Soil moisture:</p>
 									</div>
 									<div>
-										<p>40%</p>
+										<p id="moistureValue">40%</p>
 									</div>
 								</div>
-								<progress id="prog" value="40" max="100"></progress>
+								<progress id="moistureProgress" value="40" max="100"></progress>
 							</div>
 							<div class="progressItem">
 								<div class="plantDetailsItem">
@@ -125,21 +122,24 @@
 										<p>Humidity:</p>
 									</div>
 									<div>
-										<p>60%</p>
+										<p id="humidityValue">60%</p>
 									</div>
 								</div>
-								<progress id="prog" value="60" max="100"></progress>
+								<progress id="humidityProgress" value="60" max="100"></progress>
 							</div>
 						</div>
 					</div>
+				</div>
 		</section>
 		<section class="plant">
 			<img src="../assets/img/plant.png" class="plant-image" alt="">
+			<div class="plantTemperature">
+				<p class="plantStatusLabel">Temperature</p>
+				<h3 class="platStatusValue">Optimal</h3>
+			</div>
 		</section>
 	</main>
-	<footer>
-		<p>&copy; 2026 Plant Doctor. All rights reserved.</p>
-	</footer>
+	<script src="../js/script.js"></script>
 </body>
 
 </html>
