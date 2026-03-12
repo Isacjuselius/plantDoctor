@@ -104,6 +104,9 @@ main {
 
 .overviewContainer {
 	grid-column: span(1);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .plantOverview {
@@ -158,6 +161,9 @@ main {
 
 .plant {
 	grid-column: span(1);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .plant img {
@@ -197,7 +203,6 @@ progress::-webkit-progress-value {
 }
 
 .plant-image {
-	top: 100px;
 	position: relative;
 	border: 1px solid black;
 }
