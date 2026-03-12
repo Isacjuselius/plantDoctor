@@ -131,6 +131,17 @@ main {
 	background-color: var(--dark-green);
 }
 
+.plantDetailsLink {
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 500;
+}
+
+
+.plantDetailsLink:hover {
+	text-decoration: underline;
+}
+
 .plantDetailsItem {
 	display: flex;
 	justify-content: space-between;
