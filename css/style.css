@@ -166,11 +166,6 @@ main {
 	justify-content: center;
 }
 
-.plant img {
-	object-fit: cover;
-	width: 600px;
-	height: auto;
-}
 
 
 .progressItem {
@@ -206,13 +201,64 @@ progress::-webkit-progress-value {
 .plant-image {
 	position: absolute;
 	border: 1px solid black;
+		object-fit: cover;
+	width: 600px;
+	height: auto;
+}
+
+.plantStatusBlob {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	align-items: flex-end;
 }
 
 .plantTemperature {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	position: absolute;
+	top: 100px;
+	right: 430px;
+}
+
+.plantTemperature img{
+	transform: scaleX(-1);
+	left: 100px;
+	top: 20px;
+}
+
+.plantSunlight {
 	top: 200px;
-	right: 200px;
+	right: 590px;
+}
+
+.plantSunlight img{
+	transform: scaleX(-1);
+	left: 70px;
+	top: 20px;
+}
+
+.plantSoilMoisture {
+	top: 550px;
+	right: 100px;
+}
+
+.plantSoilMoisture img{
+	right: 100px;
+	top: 20px;
+}
+
+.plantHumidity {
+	top: 420px;
+	right: 120px;
+}
+
+
+.plantHumidity img {
+	right: 70px;
+	top: 20px;
+}
+
+.statusPointer{
+	width: 100px;
+	height: auto;
+	position: absolute;
 }
