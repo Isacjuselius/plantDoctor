@@ -5,9 +5,7 @@
 }
 
 body {
-	background: linear-gradient(to top,
-			#e5f7ed 0%,
-			#ffffff 100%);
+	background: #E4EDEC;
 }
 
 hr {
@@ -168,7 +166,7 @@ main {
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr 1fr;
 	gap: 20px;
-	width: 50%;
+	width: 40%;
 
 }
 
