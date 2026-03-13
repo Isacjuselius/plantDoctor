@@ -274,3 +274,12 @@ main {
 	justify-content: space-between;
 	padding-top: 10px;
 }
+
+.moistureContainer{
+	display: flex;
+	width: 60%;
+	flex-direction: column;
+	height: 100%;
+	padding: 20px;
+	background-color: white;
+}
