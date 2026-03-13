@@ -64,17 +64,12 @@
 			</div>
 			<div class="moodContent">
 				<div class="moodPic">
-					<img src="../assets/img/mood.svg" alt="">
+					<img src="../assets/img/mood_white.svg" alt="" id="moodPic">
 				</div>
 				<div class="moodDescriptionContainer">
-					<h2>HELLO</h2>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.</p>
-					<ul>
-						<li>Temperature: 24°C</li>
-						<li>Humidity: 60%</li>
-						<li>Light: 300 lux</li>
-						<li>Soil Moisture: 40%</li>
-					</ul>
+					<h2 id ="moodTitle">Satisfied</h2>
+					<p class="moodDescription" id="moodDescription">Your plant seems satisfied with its current state. Well done!</p>
+					<p class="moodDescriptionMuted" id="moodDescriptionMuted">No actions needed</p>
 				</div>
 
 			</div>
@@ -94,11 +89,11 @@
 				<div class="smallContainerContent">
 					<div class="smallContainerInfo">
 						<div class="InfoPic">
-							<img src="../assets/img/neutral.svg" alt="">
+							<img src="../assets/img/neutral.svg" alt="" id="lightLevelPic">
 						</div>
 						<div class="smallContainerDescription">
-							<h2>Dark</h2>
-							<p>4000 lumen</p>
+							<h2 id="lightLevelTitle">Dark</h2>
+							<p id ="lightLevelValue">4000 lumen</p>
 						</div>
 					</div>
 				</div>
@@ -118,7 +113,7 @@
 							<img src="../assets/img/neutral.svg" alt="">
 						</div>
 						<div class="smallContainerDescription">
-							<h2>Normal</h2>
+							<h2 id="waterLevel">Normal</h2>
 							<p>No action required</p>
 						</div>
 					</div>
@@ -127,7 +122,7 @@
 			<div class="sliderContainer">
 				<div class="sliderContainerHeader">
 					<div>
-						<img src="../assets/img/neutral.svg" alt="">
+						<img src="../assets/img/sunny_black.svg" alt="">
 					</div>
 					<div>
 						<h3>Light configuration</h3>
@@ -151,7 +146,7 @@
 		</div>
 		<div class="moistureContainer">
 			<div class="tempHeader">
-				<h3>Soil & Air humidity</h3>
+				<h3>Soil Moisture & Air humidity</h3>
 			</div>
 			<div class="moistureChartContainer">
 				<canvas id="moistureChart"></canvas>
@@ -160,7 +155,8 @@
 	</div>
 
 	<script src="../js/scriptOverview.js"></script>
-
+	<script src="../js/mood.js"></script>
+	<script src="../js/water&lightLevel.js"	></script>
 
 
 

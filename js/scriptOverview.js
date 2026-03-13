@@ -1,3 +1,10 @@
+window.sensorData = {
+	currentTemperature: 0,
+	currentSoilHumidity: 0,
+	currentAirHumidity: 0,
+	lightLevel: 0
+}
+
 /*
 function setMoisture(value) {
 	document.getElementById("moistureProgress").value = value;
@@ -11,6 +18,8 @@ function setHumidity(value) {
 
 function setTemperature(value) {
 	document.getElementById("temperatureValue").textContent = value + "°C";
+	currentTemperature = value;
+	return null;
 }
 
 function setLightLevel(value) {
@@ -64,11 +73,12 @@ const tempChart = new Chart(tempCtx, {
 		maintainAspectRatio: false,
 		plugins: {
 			legend: {
+				position: 'top',
+				align: 'end',
 				labels: {
-					color: '#ff5100',
-					font: {
-						size: 16
-					}
+					usePointStyle: true,
+					pointStyle: 'line',
+					boxWidth: 40
 				}
 			}
 		},
@@ -97,7 +107,7 @@ const tempChart = new Chart(tempCtx, {
 function handleNewTemperature(value) {
 	const now = new Date().toLocaleTimeString();
 
-	// uppdatera texten ovanför grafen
+	sensorData.currentTemperature = value;
 	document.getElementById("currentTemp").textContent = value.toFixed(1) + "°C";
 
 	tempChartData.labels.push(now);
@@ -109,6 +119,13 @@ function handleNewTemperature(value) {
 	}
 
 	tempChart.update();
+
+	setMood(
+		sensorData.currentTemperature,
+		sensorData.currentSoilHumidity,
+		sensorData.currentAirHumidity,
+		sensorData.lightLevel
+	);
 }
 
 // Dummy-generator
@@ -136,7 +153,7 @@ const chartData = {
 	labels: [],
 	datasets: [
 		{
-			label: 'Soil Humidity (%)',
+			label: 'Soil Moisture (%)',
 			data: [],
 			borderColor: soilGradient,
 			borderWidth: 3,
@@ -164,11 +181,12 @@ const chart = new Chart(humidityCtx, {
 		maintainAspectRatio: false,
 		plugins: {
 			legend: {
+				position: 'top',
+				align: 'end',
 				labels: {
-					color: '#000000',
-					font: {
-						size: 16
-					}
+					usePointStyle: true,
+					pointStyle: 'line',
+					boxWidth: 40
 				}
 			}
 		},
@@ -197,6 +215,9 @@ const chart = new Chart(humidityCtx, {
 function handleNewHumidity(soilHumidity, airHumidity) {
 	const now = new Date().toLocaleTimeString();
 
+	sensorData.currentSoilHumidity = soilHumidity;
+	sensorData.currentAirHumidity = airHumidity;
+
 	chartData.labels.push(now);
 	chartData.datasets[0].data.push(soilHumidity);
 	chartData.datasets[1].data.push(airHumidity);
@@ -208,6 +229,13 @@ function handleNewHumidity(soilHumidity, airHumidity) {
 	}
 
 	chart.update();
+
+	setMood(
+		sensorData.currentTemperature,
+		sensorData.currentSoilHumidity,
+		sensorData.currentAirHumidity,
+		sensorData.lightLevel
+	);
 }
 
 // Dummy-generator
@@ -217,4 +245,11 @@ setInterval(() => {
 	const dummySoilHumidity = 40 + Math.sin(humidityT) * 10 + (Math.random() - 0.5) * 10;
 	const dummyAirHumidity = 60 + Math.sin(humidityT) * 10 + (Math.random() - 0.5) * 10;
 	handleNewHumidity(dummySoilHumidity, dummyAirHumidity);
+}, 500);
+
+let lightLevel = 0;
+setInterval(() => {
+	lightLevel += 0.1;
+	sensorData.lightLevel = 1500 + Math.sin(lightLevel) * 100 + (Math.random() - 0.5) * 100;
+	setWaterAndLightLevel(sensorData.lightLevel);
 }, 500);
