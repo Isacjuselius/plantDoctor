@@ -97,6 +97,9 @@ const tempChart = new Chart(tempCtx, {
 function handleNewTemperature(value) {
 	const now = new Date().toLocaleTimeString();
 
+	// uppdatera texten ovanför grafen
+	document.getElementById("currentTemp").textContent = value.toFixed(1) + "°C";
+
 	tempChartData.labels.push(now);
 	tempChartData.datasets[0].data.push(value);
 
