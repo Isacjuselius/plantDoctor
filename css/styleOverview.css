@@ -31,6 +31,7 @@ nav {
 	background-size: cover;
 	position: fixed;
 	width: 100%;
+	background-color: white;
 }
 
 nav a {
