@@ -13,6 +13,11 @@ body {
     );
 }
 
+.plantName {
+	font-style: italic;
+}
+
+
 .plantStatusLabel {
 	font-weight: 500;
 	color: var(--gray);
