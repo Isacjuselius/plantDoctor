@@ -213,6 +213,7 @@ function handleNewHumidity(soilHumidity, airHumidity) {
 
 
 
+/*===MQTT===*/
 
 const socket = io();
 
@@ -239,10 +240,33 @@ if (data.topic === "Light level") {
     setLightLevel(data.value);
 }
 
+
 setInterval(() => {
 	handleNewHumidity(soilHumidity, airHumidity); 
 	handleNewTemperature(currentTemperature);
 	//setWaterAndLightLevel(lightLevel);
 }, 500); 
 
+});
+
+
+/*===LIGHT GAIN SLIDER===*/
+
+const myRange = document.getElementById("myRange");
+
+myRange.addEventListener("input", () => {
+	
+	const value  = myRange.value;
+	console.log("Gain value: ", myRange.value);
+	
+	if(value === "1"){
+		socket.emit("Light level", "Gain_Low");
+	} else if(value === "2"){
+		socket.emit("Light level", "Gain_Medium");
+	} else if(value === "3"){
+		socket.emit("Light level", "Gain_High");
+	} else if(value === "4"){
+		socket.emit("Light level", "Gain_Max");
+	}
+	
 });

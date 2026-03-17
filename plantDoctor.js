@@ -37,6 +37,12 @@ io.on("connection", (socket) => {
     client.publish("WaterLimit", msg);
 
   });
+  
+  socket.on("Light level", (msg) => {
+    console.log("Sending MQTT:", msg);
+    client.publish("Light level", msg);
+  });
+    
 
 });
 
