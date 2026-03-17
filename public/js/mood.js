@@ -46,3 +46,22 @@ function setMood(temperature, soilHumidity, airHumidity, lightLevel) {
 		moodDescriptionMuted.textContent = 'Excellent work!';
 	}
 }
+
+function getPoints(temperature, soilHumidity, airHumidity, lightLevel) {
+	let points = 0;
+
+	if (temperature > 18 && temperature < 29) {
+		points++;
+	}
+	if (soilHumidity > 30 && soilHumidity < 70) {
+		points++;
+	}
+	if (airHumidity > 40 && airHumidity < 80) {
+		points++;
+	}
+	if(lightLevel > 1000 && lightLevel < 2000) {
+		points++;
+	}
+	return points;
+}
+	

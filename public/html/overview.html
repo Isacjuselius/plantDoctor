@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../css/styleOverview.css">
 	<link rel="stylesheet" href="../css/fonts.css">
-	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="../js/chart.js"></script>
 	<title>Plant Doctor</title>
 </head>
 
@@ -92,8 +92,8 @@
 							<img src="../assets/img/neutral.svg" alt="" id="lightLevelPic">
 						</div>
 						<div class="smallContainerDescription">
-							<h2 id="lightLevelTitle">Dark</h2>
-							<p id ="lightLevelValue">4000 lumen</p>
+							<h2 id="lightLevelTitle">--</h2>
+							<p id ="lightLevelValue">--</p>
 						</div>
 					</div>
 				</div>
@@ -110,11 +110,11 @@
 				<div class="smallContainerContent">
 					<div class="smallContainerInfo">
 						<div class="InfoPic">
-							<img src="../assets/img/neutral.svg" alt="">
+							<img src="../assets/img/okay.svg" alt="" id="waterLevelPic">
 						</div>
 						<div class="smallContainerDescription">
-							<h2 id="waterLevel">Normal</h2>
-							<p>No action required</p>
+							<h2 id="waterLevelTitle">Sufficient</h2>
+							<p id="waterLevelAction">No action required</p>
 						</div>
 					</div>
 				</div>
@@ -153,7 +153,7 @@
 			</div>
 		</div>
 	</div>
-
+	<script src="/socket.io/socket.io.js"></script>
 	<script src="../js/scriptOverview.js"></script>
 	<script src="../js/mood.js"></script>
 	<script src="../js/water&lightLevel.js"	></script>

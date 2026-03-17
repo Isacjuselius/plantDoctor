@@ -6,14 +6,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/fonts.css">
-	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="../js/chart.js"></script>
 	<title>Plant Doctor</title>
 </head>
 
 <body>
-	<header>
-		<div class="navContainer"></div>
-		<nav>
+<nav>
 			<div class="logo">
 				<img src="../assets/img/eco.svg" class="logo" alt="">
 				<a href="index.html" class="logoLink">
@@ -21,30 +19,16 @@
 				</a>
 			</div>
 			<div class="navContainer">
-				<div class="navItem">
+				<div class="navItem focused">
 					<img src="../assets/img/potted_plant.svg" class="logo" alt="">
-					<a href="index.html">The Sac</a>
+					<a href="index.html">Overview</a>
 				</div>
 				<div class="navItem">
 					<img src="../assets/img/potted_plant.svg" class="logo" alt="">
-					<a href="index.html">The Sac</a>
-				</div>
-				<div class="navItem">
-					<img src="../assets/img/potted_plant.svg" class="logo" alt="">
-					<a href="index.html">The Sac</a>
-				</div>
-				<div class="navItem">
-					<img src="../assets/img/potted_plant.svg" class="logo" alt="">
-					<a href="index.html">The Sac</a>
+					<a href="index.html">Details</a>
 				</div>
 			</div>
-
-
-
 		</nav>
-		</div>
-
-	</header>
 	<main>
 		<section class="overviewContainer">
 			<div id="dataOverviewContainer">
@@ -53,14 +37,14 @@
 					<div class="overViewContent">
 						<p>Overall mood:</p>
 						<div class="iconWithText">
-							<p>Happy</p>
-							<img src="../assets/img/mood.svg" alt="">
+							<p id="moodTitle">--</p>
+							<img src="../assets/img/mood.svg" alt="" id="moodPic">
 						</div>
 					</div>
 					<div class="overViewContent">
 						<p>Automated watering:</p>
 						<div class="toggle">
-							<input type="checkbox"/>
+							<input type="checkbox" id="autoWaterToggle"/>
 							<label></label>
 						</div>
 					</div>
@@ -73,7 +57,7 @@
 								<h2>Plant Details</h2>
 							</div>
 							<div>
-								<a href="overview.html" class="plantDetailsLink"><img src="../assets/img/arrow_outward.svg" alt="See more"></a>
+								<a href="/html/overview.html" class="plantDetailsLink"><img src="../assets/img/arrow_outward.svg" alt="See more"></a>
 							</div>
 						</div>
 						<div class="plantDetailsContainer">
@@ -83,7 +67,7 @@
 									<p>Temperature:</p>
 								</div>
 								<div>
-									<p id="temperatureValue">35°C</p>
+									<p id="temperatureValue">--</p>
 								</div>
 							</div>
 
@@ -93,7 +77,7 @@
 									<p>Light level:</p>
 								</div>
 								<div>
-									<p id="lightLevelValue">HIGH</p>
+									<p id="lightLevelValue">--</p>
 								</div>
 							</div>
 
@@ -103,7 +87,7 @@
 									<p>Water level:</p>
 								</div>
 								<div>
-									<p id="waterLevelValue">HIGH</p>
+									<p id="waterLevelValue">Sufficient</p>
 								</div>
 							</div>
 							<hr>
@@ -139,26 +123,28 @@
 			<img src="../assets/img/plant.png" class="plant-image" alt="">
 			<div class="plantTemperature plantStatusBlob">
 				<p class="plantStatusLabel">Temperature</p>
-				<h3 class="platStatusValue">Optimal</h3>
+				<h3 class="platStatusValue" id="statusTemperature" >Optimal</h3>
 				<img src="../assets/img/pointer.png" alt="" class="statusPointer">
 			</div>
 			<div class="plantSunlight plantStatusBlob">
 				<p class="plantStatusLabel">Sunlight</p>
-				<h3 class="platStatusValue">High</h3>
+				<h3 class="platStatusValue" id="statusLightLevel">High</h3>
 				<img src="../assets/img/pointer.png" alt="" class="statusPointer">
 			</div>
 			<div class="plantHumidity plantStatusBlob">
 				<p class="plantStatusLabel">Humidity</p>
-				<h3 class="platStatusValue">High</h3>
+				<h3 class="platStatusValue" id="statusHumidity">High</h3>
 				<img src="../assets/img/pointer.png" alt="" class="statusPointer">	
 			</div>
 			<div class="plantSoilMoisture plantStatusBlob">
 				<p class="plantStatusLabel">Soil Moisture</p>
-				<h3 class="platStatusValue">Optimal</h3>
+				<h3 class="platStatusValue" id="statusMoisture">Optimal</h3>
 				<img src="../assets/img/pointer.png" alt="" class="statusPointer">	
 			</div>
 		</section>
 	</main>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="../js/mood.js"></script>
 	<script src="../js/script.js"></script>
 </body>
 

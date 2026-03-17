@@ -2,40 +2,18 @@ window.sensorData = {
 	currentTemperature: 0,
 	currentSoilHumidity: 0,
 	currentAirHumidity: 0,
-	lightLevel: 0
+	lightLevel: 0,
+	waterLevel:0 
 }
 
-/*
-function setMoisture(value) {
-	document.getElementById("moistureProgress").value = value;
-	document.getElementById("moistureValue").textContent = value + "%";
-}
+let currentTemperature = 0;
+let soilHumidity = 0;
+let airHumidity = 0;
+let waterLevel = 0;
+let lightLevel = 0;
 
-function setHumidity(value) {
-	document.getElementById("humidityProgress").value = value;
-	document.getElementById("humidityValue").textContent = value + "%";
-}
 
-function setTemperature(value) {
-	document.getElementById("temperatureValue").textContent = value + "°C";
-	currentTemperature = value;
-	return null;
-}
-
-function setLightLevel(value) {
-	document.getElementById("lightLevelValue").textContent = value;
-}
-
-function setWaterLevel(value) {
-	document.getElementById("waterLevelValue").textContent = value;
-}
-
-setMoisture(70);
-setHumidity(70);
-setTemperature(20);
-setLightLevel("OK");
-setWaterLevel(100);
-*/
+/* ===TEMPERATURE CHART=== */
 
 // Chart.js code for temperature chart
 const tempCtx = document.getElementById('tempChart').getContext('2d');
@@ -108,7 +86,7 @@ function handleNewTemperature(value) {
 	const now = new Date().toLocaleTimeString();
 
 	sensorData.currentTemperature = value;
-	document.getElementById("currentTemp").textContent = value.toFixed(1) + "°C";
+	document.getElementById("currentTemp").textContent = value + "°C";
 
 	tempChartData.labels.push(now);
 	tempChartData.datasets[0].data.push(value);
@@ -128,14 +106,9 @@ function handleNewTemperature(value) {
 	);
 }
 
-// Dummy-generator
-let tempT = 0;
-setInterval(() => {
-	tempT += 0.1;
-	const dummyTemp = 22 + Math.sin(tempT) * 3 + (Math.random() - 0.5);
-	handleNewTemperature(dummyTemp);
-}, 500);
 
+
+/*===HUMIDITY/MOISTURE CHART === */
 
 const humidityCtx = document.getElementById('moistureChart').getContext('2d');
 
@@ -211,7 +184,7 @@ const chart = new Chart(humidityCtx, {
 	}
 });
 
-// Funktion som uppdaterar båda värdena samtidigt
+// Handle AirHumidity och Soil Moisture (Samma graf)
 function handleNewHumidity(soilHumidity, airHumidity) {
 	const now = new Date().toLocaleTimeString();
 
@@ -238,18 +211,38 @@ function handleNewHumidity(soilHumidity, airHumidity) {
 	);
 }
 
-// Dummy-generator
-let humidityT = 0;
-setInterval(() => {
-	humidityT += 0.1;
-	const dummySoilHumidity = 40 + Math.sin(humidityT) * 10 + (Math.random() - 0.5) * 10;
-	const dummyAirHumidity = 60 + Math.sin(humidityT) * 10 + (Math.random() - 0.5) * 10;
-	handleNewHumidity(dummySoilHumidity, dummyAirHumidity);
-}, 500);
 
-let lightLevel = 0;
+
+
+const socket = io();
+
+socket.on("mqttMessage", (data) => {
+    console.log("Från socket:", data);
+
+if (data.topic === "Temperature") {
+    currentTemperature = data.value;
+}
+
+if (data.topic === "Soil Moisture") {
+   soilHumidity = data.value;
+}
+
+if (data.topic === "Humidity") {
+    airHumidity = data.value;
+}
+
+if (data.topic === "WaterLimit") {
+    setWaterLevel(data.value);
+}
+
+if (data.topic === "Light level") {
+    setLightLevel(data.value);
+}
+
 setInterval(() => {
-	lightLevel += 0.1;
-	sensorData.lightLevel = 1500 + Math.sin(lightLevel) * 100 + (Math.random() - 0.5) * 100;
-	setWaterAndLightLevel(sensorData.lightLevel);
-}, 500);
+	handleNewHumidity(soilHumidity, airHumidity); 
+	handleNewTemperature(currentTemperature);
+	//setWaterAndLightLevel(lightLevel);
+}, 500); 
+
+});
