@@ -62,7 +62,13 @@ const tempChart = new Chart(tempCtx, {
 		},
 		scales: {
 			x: {
-				display: false,
+				display: true,
+				
+				ticks: {
+					maxTicksLimit: 6,
+					color: '#000000'
+				},
+				
 				grid: {
 					color: 'rgba(0,255,255,0.05)'
 				}
@@ -83,7 +89,7 @@ const tempChart = new Chart(tempCtx, {
 
 // Återanvändbar funktion
 function handleNewTemperature(value) {
-	const now = new Date().toLocaleTimeString();
+	const now = new Date().toLocaleTimeString('sv-SE');
 
 	sensorData.currentTemperature = value;
 	document.getElementById("currentTemp").textContent = value + "°C";
@@ -165,7 +171,11 @@ const chart = new Chart(humidityCtx, {
 		},
 		scales: {
 			x: {
-				display: false,
+				display: true,
+				ticks: {
+					maxTicksLimit: 6,
+					color: '#000000'
+				},
 				grid: {
 					color: 'rgba(0,255,255,0.05)'
 				}
@@ -186,7 +196,7 @@ const chart = new Chart(humidityCtx, {
 
 // Handle AirHumidity och Soil Moisture (Samma graf)
 function handleNewHumidity(soilHumidity, airHumidity) {
-	const now = new Date().toLocaleTimeString();
+	const now = new Date().toLocaleTimeString('sv-SE');
 
 	sensorData.currentSoilHumidity = soilHumidity;
 	sensorData.currentAirHumidity = airHumidity;
