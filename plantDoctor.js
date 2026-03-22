@@ -10,6 +10,8 @@ const path = require("path");
 
 const client = mqtt.connect("mqtt://localhost");
 
+let toggleState = false;
+
 client.on("connect", () => {
   console.log("MQTT connected");
   client.subscribe("Temperature");
@@ -28,10 +30,22 @@ client.on("message", (topic, message) => {
 
 io.on("connection", (socket) => {
   console.log("Browser connected");
+
+  socket.emit("toggleState", toggleState);
+
+  socket.on("toggleChange", (state) => {
+    toggleState = state;
+    console.log("Toggle saved:", state);
+  });
+
   socket.on("WaterLimit", (msg) => {
     client.publish("WaterLimit", msg);
   });
 });
+
+
+
+
 
 app.use(express.static(path.join(__dirname, "public")));
 server.listen(3000, () => {

@@ -139,7 +139,13 @@ toggle.addEventListener("change", () => {
     let msg = toggle.checked ? "AUTOWATERING_ON" : "AUTOWATERING_OFF"; 
         
     socket.emit("WaterLimit", msg);
+    socket.emit("toggleChange", toggle.checked);
 
+});
+
+socket.on("toggleState", (state) => {
+    console.log("toggle loaded:", state);
+    toggle.checked = state;
 });
 
 
