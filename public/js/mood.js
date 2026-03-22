@@ -18,32 +18,46 @@ function setMood(temperature, soilHumidity, airHumidity, lightLevel) {
 	const moodTitle = document.getElementById('moodTitle');
 	const moodDescription = document.getElementById('moodDescription');
 	const moodDescriptionMuted = document.getElementById('moodDescriptionMuted');
+	const indexMoodTitle = document.getElementById('indexMoodTitle');
+	const indexMoodPic = document.getElementById('indexMoodPic');
+
 
 	if (points === 0) {
 		moodPic.src = '../assets/img/mood_bad_white.svg';
 		moodTitle.textContent = 'Unhappy';
 		moodDescription.textContent = 'Your plant is struggling.';
 		moodDescriptionMuted.textContent = 'Consider adjusting the conditions.';
+		indexMoodTitle.textContent = 'Unhappy';
+		indexMoodPic.src = '../assets/img/mood_bad.svg';
 	} else if (points === 1) {
 		moodPic.src = '../assets/img/dissatisfied_white.svg';
 		moodTitle.textContent = 'Dissatisfied';
 		moodDescription.textContent = 'Your plant is not doing well.';
 		moodDescriptionMuted.textContent = 'Try to improve the conditions.';
+		indexMoodTitle.textContent = 'Dissatisfied';
+		indexMoodPic.src = '../assets/img/dissatisfied.svg';
 	} else if (points === 2) {
 		moodPic.src = '../assets/img/neutral_white.svg';
 		moodTitle.textContent = 'Neutral';
 		moodDescription.textContent = 'Your plant is doing okay.';
 		moodDescriptionMuted.textContent = 'There is room for improvement.';
+		indexMoodTitle.textContent = 'Neutral';
+		indexMoodPic.src = '../assets/img/neutral.svg';
 	} else if (points === 3) {
 		moodPic.src = '../assets/img/Satisfied_white.svg';
 		moodTitle.textContent = 'Satisfied';
 		moodDescription.textContent = 'Your plant is doing well!';
 		moodDescriptionMuted.textContent = 'Keep up the good work!';
+		indexMoodTitle.textContent = 'Satisfied';
+		indexMoodPic.src = '../assets/img/Satisfied.svg';
+
 	} else if (points === 4) {
 		moodPic.src = '../assets/img/mood_white.svg';
 		moodTitle.textContent = 'Happy';
 		moodDescription.textContent = 'Your plant is thriving!';
 		moodDescriptionMuted.textContent = 'Excellent work!';
+		indexMoodTitle.textContent = 'Happy';
+		indexMoodPic.src = '../assets/img/mood.svg';
 	}
 }
 
