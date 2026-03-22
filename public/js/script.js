@@ -111,19 +111,19 @@ points = getPoints(
 	);
     
 if (points === 0) {
-    moodPic.src = '../assets/img/mood_bad_white.svg';
+    moodPic.src = '../assets/img/mood_bad.svg';
     moodTitle.textContent = 'Unhappy';
 } else if (points === 1) {
-    moodPic.src = '../assets/img/dissatisfied_white.svg';
+    moodPic.src = '../assets/img/dissatisfied.svg';
     moodTitle.textContent = 'Dissatisfied';
 } else if (points === 2) {
-    moodPic.src = '../assets/img/neutral_white.svg';
+    moodPic.src = '../assets/img/neutral.svg';
     moodTitle.textContent = 'Neutral';
 } else if (points === 3) {
-    moodPic.src = '../assets/img/Satisfied_white.svg';
+    moodPic.src = '../assets/img/Satisfied.svg';
     moodTitle.textContent = 'Satisfied';
 } else if (points === 4) {
-    moodPic.src = '../assets/img/mood_white.svg';
+    moodPic.src = '../assets/img/mood.svg';
 		moodTitle.textContent = 'Happy';
 	}
 
