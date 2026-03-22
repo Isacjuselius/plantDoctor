@@ -11,24 +11,24 @@
 </head>
 
 <body>
-<nav>
-			<div class="logo">
-				<img src="../assets/img/eco.svg" class="logo" alt="">
-				<a href="index.html" class="logoLink">
-					Plant-Doctor
-				</a>
-			</div>
-			<div class="navContainer">
-				<div class="navItem focused">
-					<img src="../assets/img/potted_plant.svg" class="logo" alt="">
-					<a href="index.html">Overview</a>
-				</div>
-				<div class="navItem">
-					<img src="../assets/img/potted_plant.svg" class="logo" alt="">
-					<a href="index.html">Details</a>
-				</div>
-			</div>
-		</nav>
+	<nav>
+		<div class="logo">
+			<img src="../assets/img/eco.svg" class="logo" alt="">
+			<a href="index.html" class="logoLink">
+				Plant-Doctor
+			</a>
+		</div>
+		<div class="navContainer">
+			<a href="index.html" class="navItem focused">
+				<img src="../assets/img/potted_plant.svg" class="logo" alt="">
+				<p>Overview</p>
+			</a>
+			<a href="overview.html" class="navItem">
+				<img src="../assets/img/potted_plant.svg" class="logo" alt="">
+				<p>Details</p>
+			</a>
+		</div>
+	</nav>
 	<main>
 		<section class="overviewContainer">
 			<div id="dataOverviewContainer">
@@ -44,7 +44,7 @@
 					<div class="overViewContent">
 						<p>Automated watering:</p>
 						<div class="toggle">
-							<input type="checkbox" id="autoWaterToggle"/>
+							<input type="checkbox" id="autoWaterToggle" />
 							<label></label>
 						</div>
 					</div>
@@ -57,7 +57,8 @@
 								<h2>Plant Details</h2>
 							</div>
 							<div>
-								<a href="/html/overview.html" class="plantDetailsLink"><img src="../assets/img/arrow_outward.svg" alt="See more"></a>
+								<a href="/html/overview.html" class="plantDetailsLink"><img
+										src="../assets/img/arrow_outward.svg" alt="See more"></a>
 							</div>
 						</div>
 						<div class="plantDetailsContainer">
@@ -120,10 +121,10 @@
 				</div>
 		</section>
 		<section class="plant">
-			<img src="../assets/img/plant.png" class="plant-image" alt="">
+			<img src="../assets/img/front1.png" class="plant-image" alt="">
 			<div class="plantTemperature plantStatusBlob">
 				<p class="plantStatusLabel">Temperature</p>
-				<h3 class="platStatusValue" id="statusTemperature" >Optimal</h3>
+				<h3 class="platStatusValue" id="statusTemperature">Optimal</h3>
 				<img src="../assets/img/pointer.png" alt="" class="statusPointer">
 			</div>
 			<div class="plantSunlight plantStatusBlob">
@@ -134,12 +135,12 @@
 			<div class="plantHumidity plantStatusBlob">
 				<p class="plantStatusLabel">Humidity</p>
 				<h3 class="platStatusValue" id="statusHumidity">High</h3>
-				<img src="../assets/img/pointer.png" alt="" class="statusPointer">	
+				<img src="../assets/img/pointer.png" alt="" class="statusPointer">
 			</div>
 			<div class="plantSoilMoisture plantStatusBlob">
 				<p class="plantStatusLabel">Soil Moisture</p>
 				<h3 class="platStatusValue" id="statusMoisture">Optimal</h3>
-				<img src="../assets/img/pointer.png" alt="" class="statusPointer">	
+				<img src="../assets/img/pointer.png" alt="" class="statusPointer">
 			</div>
 		</section>
 	</main>

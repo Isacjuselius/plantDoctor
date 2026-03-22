@@ -8,7 +8,6 @@ const server = http.createServer(app);
 const io = new Server(server);
 const path = require("path");
 
-// Koppla till din lokala broker på Pi
 const client = mqtt.connect("mqtt://localhost");
 
 client.on("connect", () => {
@@ -28,22 +27,10 @@ client.on("message", (topic, message) => {
 });
 
 io.on("connection", (socket) => {
-
   console.log("Browser connected");
-
   socket.on("WaterLimit", (msg) => {
-
-    console.log("Sending MQTT:", msg);
     client.publish("WaterLimit", msg);
-
   });
-  
-  socket.on("Light level", (msg) => {
-    console.log("Sending MQTT:", msg);
-    client.publish("Light level", msg);
-  });
-    
-
 });
 
 app.use(express.static(path.join(__dirname, "public")));
@@ -54,3 +41,6 @@ server.listen(3000, () => {
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "html", "index.html"));
 });
+
+
+

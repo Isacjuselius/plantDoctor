@@ -21,17 +21,17 @@ hr {
 }
 
 nav {
+	background-color: white;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
 	align-items: center;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	padding: 0 20px;
+	padding: 0 100px;
 	height: 70px;
 	background-size: cover;
 	position: fixed;
 	width: 100%;
-	background-color: white;
+	z-index: 1000;
 }
 
 nav a {
@@ -43,10 +43,14 @@ nav a {
 .navItem {
 	display: flex;
 	align-items: center;
-	width: 100px;
+	gap: 8px;
 	border-radius: 15px;
 	justify-content: space-between;
-	padding: 5px;
+	padding: 5px 8px;
+}
+
+.focused {
+	background-color: #bde1bc58;
 }
 
 .navItem img {
@@ -76,8 +80,9 @@ nav a {
 
 .navContainer {
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
 	align-items: center;
+	gap: 48px;
 	width: 50%;
 }
 

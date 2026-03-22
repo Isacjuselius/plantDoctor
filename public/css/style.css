@@ -46,6 +46,7 @@ hr {
 }
 
 nav {
+	background-color: white;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -55,6 +56,7 @@ nav {
 	background-size: cover;
 	position: fixed;
 	width: 100%;
+	z-index: 1000;
 }
 
 nav a {
@@ -69,11 +71,11 @@ nav a {
 	gap: 8px;
 	border-radius: 15px;
 	justify-content: space-between;
-	padding: 5px;
+	padding: 5px 8px;
 }
 
-.navItem focused {
-	background-color: #000000;
+.focused {
+	background-color: #bde1bc58;
 }
 
 .navItem img {
@@ -225,7 +227,7 @@ main {
 .overviewContainer {
 	display: flex;
 	flex-direction: column;
-	padding: 100px 20px;
+	padding: 100px 20px 0 20px;
 }
 
 .overViewContent {
@@ -281,7 +283,7 @@ progress::-webkit-progress-value {
 
 .plant-image {
 	object-fit: cover;
-	width: 90%;
+	width: 60%;
 	height: auto;
 	display: block;
 }
@@ -295,18 +297,17 @@ progress::-webkit-progress-value {
 }
 
 .plantTemperature {
-	top: 12%;
-	right: 40%;
+	top: 20%;
+	right: 30%;
 }
 
 .plantTemperature img{
-	transform: scaleX(-1);
-	left: 110%;
+	left: -120%;
 	top: 25%;
 }
 
 .plantSunlight {
-	top: 30%;
+	top: 35%;
 	right: 65%;
 }
 
@@ -317,8 +318,8 @@ progress::-webkit-progress-value {
 }
 
 .plantSoilMoisture {
-	top: 70%;
-	right: 15%;
+	top: 65%;
+	right: 10%;
 }
 
 .plantSoilMoisture img{
@@ -327,8 +328,8 @@ progress::-webkit-progress-value {
 }
 
 .plantHumidity {
-	top: 30%;
-	right: 5%;
+	top: 34%;
+	right: 15%;
 }
 
 
